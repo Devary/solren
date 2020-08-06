@@ -1,0 +1,22 @@
+<div>
+  <p>add tab works!</p>
+  <input type="text" placeholder="title" [(ngModel)]="tab.title">
+  <textarea name="ta" id="ta" cols="50" rows="50"  [(ngModel)]="tab.content"></textarea>
+  <textarea name="ta" id="com" cols="10" rows="10"  [(ngModel)]="tab.comment"></textarea>
+  <button type="button" class="btnSubmit btn btn-warning" (click)="addNewTab()">Submit</button>
+</div>
+
+
+<div >
+  <mat-tab-group mat-align-tabs="start" *ngIf="tabs ">
+    <div *ngFor="let t of tabs">
+      <mat-tab label="{{t.title}}" >
+        <table datatable class="row-border hover">
+         {{t.content}}
+        </table>
+      </mat-tab>
+    </div>
+  </mat-tab-group>
+
+
+</div>
